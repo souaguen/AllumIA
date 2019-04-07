@@ -16,13 +16,14 @@ class Play extends Game
     {
         do
         {
-            system("clear");
             $this->makePyr($this->pyramide);
-            $count = array_count_values($tab[$line]);
             if ($this->_turn % 2 != 0)
             {
                 $this->player->setElement($this->lines, $this->maxMatch);
                 $a = $this->player->getArgs();
+                $count = array_count_values($this->pyramide[$a["line"]]);
+                if (!key_exists("|", $count) || (key_exists("|", $count) && $count["|"] < $a["match"]))
+                    continue;
             }
             else
             {

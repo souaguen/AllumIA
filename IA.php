@@ -72,7 +72,7 @@ class IA
     {
         $loss = 0;
         $win = 0;
-        for ($iter = 0; $iter < 1000; $iter++)
+        for ($iter = 0; $iter < 3000; $iter++)
         {
             $test = $tab;
             $turn = 1;
